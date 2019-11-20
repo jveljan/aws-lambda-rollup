@@ -5,7 +5,9 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 var nodeResolve = _interopDefault(require('rollup-plugin-node-resolve'));
 var builtins = _interopDefault(require('builtin-modules'));
 var commonJS = _interopDefault(require('rollup-plugin-commonjs'));
-var json = _interopDefault(require('rollup-plugin-json'));
+require('path');
+var vendor = require('./vendor-71470efa.js');
+require('util');
 
 var index = ({
 	input = 'index.js',
@@ -26,7 +28,7 @@ var index = ({
 	plugins: [
 		nodeResolve({ preferBuiltins: true }),
 		commonJS({ include: 'node_modules/**' }),
-		json(),
+		vendor.json(),
 		...plugins
 	],
 	external: ['aws-sdk', ...builtins, ...external]

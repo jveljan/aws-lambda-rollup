@@ -1,7 +1,7 @@
 import nodeResolve from 'rollup-plugin-node-resolve'
 import builtins from 'builtin-modules'
 import commonJS from 'rollup-plugin-commonjs'
-import json from 'rollup-plugin-json'
+import json from '@rollup/plugin-json'
 
 export default ({
 	input = 'index.js',
